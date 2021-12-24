@@ -13,8 +13,6 @@ def get_acct(name, userdata):
     stocks = rh.load_account_profile()
     cash = basics["cash"]
     equity = basics["equity"]
-    # for key,value in stocks.items():
-    #     print(key,value)
     retval = [cash, equity]
     print(str(retval))
     rh.logout()
@@ -32,17 +30,28 @@ for player in st.secrets.keys():
     user_dict[player] = user_data
 
 
+leadercheck = {}
 st.title("Wheeler Stock Competition Leaderboard")
 for user in user_dict.keys():
     try:
         ud = user_dict[user]
-        results = get_acct(user, ud)
-        ud["cash"] = results[0]
-        ud["equity"] = results[1]
-        user_dict[user] = ud
-        st.write(user + ": cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
+        results = get_acct(user, user_dict[user])
+        user_dict[user]["cash"] = results[0]
+        user_dict[user]["equity"] = results[1]
+        total = float(user_dict[user]["cash"]) + float(user_dict[user]["equity"])
+        user_dict[user]["total"] = total
+        leadercheck[user] = total
+        # st.write(user + ": cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
     except:
         pass
+
+counter = 0
+while counter < len(leadercheck.keys())-1:
+    leader = max(leadercheck, key = leadercheck.get)
+    st.write("1st place = " + leader + ": $" + user_dict[leader]["total"])
+    leadercheck[leader] = 0
+    counter +=1
+
 
 
 
