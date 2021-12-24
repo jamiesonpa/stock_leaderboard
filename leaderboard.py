@@ -47,8 +47,29 @@ for user in user_dict.keys():
 counter = 0
 while counter < len(leadercheck.keys())-1:
     leader = max(leadercheck, key = leadercheck.get)
-    st.write("1st place = " + leader + ": $" + str(user_dict[leader]["total"]))
-    leadercheck[leader] = 0
+    if counter == 0:
+        st.write("1st place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 1:
+        st.write("2nd place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 2:
+        st.write("3rd place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 3:
+        st.write("4th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 4:
+        st.write("5th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 5:
+        st.write("6th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 6:
+        st.write("7th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 7:
+        st.write("8th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 8:
+        st.write("9th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    elif counter == 9:
+        st.write("10th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+    else:
+        st.write("unranked = " + leader + ": $" + str(user_dict[leader]["total"]))
+    leadercheck[leader] = ""
     counter +=1
 
 
