@@ -40,7 +40,7 @@ for user in user_dict.keys():
         total = float(user_dict[user]["cash"]) + float(user_dict[user]["equity"])
         user_dict[user]["total"] = total
         leadercheck[user] = total
-        # st.write(user + ": cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
+        st.write(user + ": cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
     except:
         pass
 
@@ -69,5 +69,10 @@ while counter < len(leadercheck.keys())-1:
         st.write("10th place = " + leader + ": $" + str(user_dict[leader]["total"]))
     else:
         st.write("unranked = " + leader + ": $" + str(user_dict[leader]["total"]))
-    leadercheck[leader] = ""
+    leadercheck.pop(leader)
     counter +=1
+
+
+
+
+
