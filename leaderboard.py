@@ -68,7 +68,7 @@ while counter < len(leadercheck.keys())-1:
         st.write("10th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     else:
         st.write("unranked = " + leader + ": $" + str(user_dict[leader]["equity"]))
-    leadercheck = leadercheck.pop(leader)
+    leadercheck.pop(leader)
     counter +=1
 
 
