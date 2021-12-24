@@ -40,7 +40,6 @@ for user in user_dict.keys():
         total = float(user_dict[user]["cash"]) + float(user_dict[user]["equity"])
         user_dict[user]["total"] = total
         leadercheck[user] = total
-        st.write(user + ": cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
     except:
         pass
 
@@ -48,28 +47,28 @@ counter = 0
 while counter < len(leadercheck.keys())-1:
     leader = max(leadercheck, key = leadercheck.get)
     if counter == 0:
-        st.write("1st place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("1st place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 1:
-        st.write("2nd place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("2nd place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 2:
-        st.write("3rd place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("3rd place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 3:
-        st.write("4th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("4th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 4:
-        st.write("5th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("5th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 5:
-        st.write("6th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("6th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 6:
-        st.write("7th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("7th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 7:
-        st.write("8th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("8th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 8:
-        st.write("9th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("9th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 9:
-        st.write("10th place = " + leader + ": $" + str(user_dict[leader]["total"]))
+        st.write("10th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     else:
-        st.write("unranked = " + leader + ": $" + str(user_dict[leader]["total"]))
-    leadercheck.pop(leader)
+        st.write("unranked = " + leader + ": $" + str(user_dict[leader]["equity"]))
+    leadercheck = leadercheck.pop(leader)
     counter +=1
 
 
