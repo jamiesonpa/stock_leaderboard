@@ -40,7 +40,7 @@ for user in user_dict.keys():
         ud["cash"] = results[0]
         ud["equity"] = results[1]
         user_dict[user] = ud
-        st.write("user: " + str(user_dict[user]))
+        st.write("user: cash = " + str(user_dict[user]["cash"])+ ", equity = " + str(user_dict[user]["equity"]))
     except:
         pass
 
