@@ -3,6 +3,7 @@ import robin_stocks.gemini as gem
 import robin_stocks.tda as tda
 import pyotp
 import streamlit as st
+from streamlit import secrets
 
 
 def get_acct(name, userdata):
@@ -22,17 +23,14 @@ def get_acct(name, userdata):
 
 user_dict = {}
 
-with open("auth_codes.txt") as readfile:
-    ac = readfile.read().split("\n")
-
-user_data = {}
-for line in ac:
+for player in st.secrets.keys():
     user_data = {}
-    splits = line.split(",")
-    user_data["email"] = splits[1]
-    user_data["password"] = splits[2]
-    user_data["code"] = splits[3]
-    user_dict[splits[0]] = user_data
+    playerdata = st.secrets[player].split(",")
+    user_data["email"] = playerdata[0]
+    user_data["password"] = playerdata[1]
+    user_data["code"] = playerdata[2]
+    user_dict[player] = user_data
+
 
 st.title("Wheeler Stock Competition Leaderboard")
 for user in user_dict.keys():
@@ -42,7 +40,7 @@ for user in user_dict.keys():
         ud["cash"] = results[0]
         ud["equity"] = results[1]
         user_dict[user] = ud
-        st.write("user: " + user_dict[user])
+        st.write("user: " + str(user_dict[user]))
     except:
         pass
 
