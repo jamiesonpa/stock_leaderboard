@@ -47,7 +47,7 @@ for user in user_dict.keys():
 counter = 0
 while counter < len(leadercheck.keys())-1:
     leader = max(leadercheck, key = leadercheck.get)
-    st.write("1st place = " + leader + ": $" + user_dict[leader]["total"])
+    st.write("1st place = " + leader + ": $" + str(user_dict[leader]["total"]))
     leadercheck[leader] = 0
     counter +=1
 
