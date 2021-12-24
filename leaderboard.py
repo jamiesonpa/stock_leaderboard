@@ -44,11 +44,8 @@ for user in user_dict.keys():
         pass
 
 counter = 0
-st.write("starting iterations")
 while counter < len(leadercheck.keys())+1:
-    st.write("iteration " + str(counter+1))
     leader = max(leadercheck, key = leadercheck.get)
-    st.write("leader found: " + leader)
     if counter == 0:
         st.write("1st place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     elif counter == 1:
@@ -71,9 +68,7 @@ while counter < len(leadercheck.keys())+1:
         st.write("10th place = " + leader + ": $" + str(user_dict[leader]["equity"]))
     else:
         st.write("unranked = " + leader + ": $" + str(user_dict[leader]["equity"]))
-    st.write("popping " + leader + " and incrementing")
     leadercheck.pop(leader)
-    st.write((str(leadercheck.keys())))
     counter +=1
 
 
