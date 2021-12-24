@@ -34,7 +34,6 @@ leadercheck = {}
 st.title("Wheeler Stock Competition Leaderboard")
 for user in user_dict.keys():
     try:
-        ud = user_dict[user]
         results = get_acct(user, user_dict[user])
         user_dict[user]["cash"] = results[0]
         user_dict[user]["equity"] = results[1]
