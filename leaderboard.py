@@ -45,7 +45,7 @@ for user in user_dict.keys():
 
 counter = 0
 st.write("starting iterations")
-while counter < len(leadercheck.keys())-1:
+while counter < len(leadercheck.keys())+1:
     st.write("iteration " + str(counter+1))
     leader = max(leadercheck, key = leadercheck.get)
     st.write("leader found: " + leader)
