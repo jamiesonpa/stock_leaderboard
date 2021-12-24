@@ -71,8 +71,3 @@ while counter < len(leadercheck.keys())-1:
         st.write("unranked = " + leader + ": $" + str(user_dict[leader]["total"]))
     leadercheck[leader] = ""
     counter +=1
-
-
-
-
-
