@@ -73,6 +73,7 @@ while counter < len(leadercheck.keys())-1:
         st.write("unranked = " + leader + ": $" + str(user_dict[leader]["equity"]))
     st.write("popping " + leader + " and incrementing")
     leadercheck.pop(leader)
+    st.write((str(leadercheck.keys())))
     counter +=1
 
 
